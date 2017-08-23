@@ -44,15 +44,15 @@ const drawCube = regl({
 //   elements: bunny.cells
 // })
 
-// const drawTeapot = regl({
-//   vert,
-//   frag,
-//   attributes: {
-//     position: teapot.positions,
-//     normal: angleNormals(teapot.cells, teapot.positions)
-//   },
-//   elements: teapot.cells
-// })
+const drawTeapot = regl({
+  vert,
+  frag,
+  attributes: {
+    position: teapot.positions,
+    normal: angleNormals(teapot.cells, teapot.positions)
+  },
+  elements: teapot.cells
+})
 
 // const drawIcosphere = regl({
 //   vert,
@@ -67,9 +67,9 @@ const drawCube = regl({
 regl.frame(() => {
   regl.clear({ color: [0, 0, 0, 1] })
   camera(() => {
-    drawCube()
+    // drawCube()
     // drawIcosphere()
     // drawBunny()
-    // drawTeapot()
+    drawTeapot()
   })
 })
